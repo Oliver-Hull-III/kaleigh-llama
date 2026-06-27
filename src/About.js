@@ -1,21 +1,22 @@
 import React from 'react';
 import {Col, Card} from 'react-bootstrap';
 import './css/about.css';
-import { Link } from 'react-router-dom';
 const About = () => (
     <div className = "about-section first-container bg-img-full">
       <Col xl={4} lg={6} md={7} id="portrait" className="d-none d-md-block">
         <img src="https://u.cubeupload.com/kaleighllama/portrait.png" alt="a pictur of nectar"/>
       </Col>
-      <Col lg={4} md={5} sm={12} className="offset-lg-1 offset-xl-3 offset-xs-0 mt-2 mt-md-0" id ="about-text">
+      <Col lg={4} md={5} sm={12} className="offset-lg-1 offset-xl-3 offset-xs-0 mt-0 mt-md-0" id ="about-text">
         <Card >
           <Card.Header>
             <h1>About Me</h1>
           </Card.Header>
-          <Card.Body>
-            <p>I'm an artist based in Oregon.  After attending FIT in 2017, I moved here to pursue a career as an Animal Caretaker. Since then I have watched over animals small and large (including llamas of course). I am also in the process of learning Canine Massage Therapy.</p>
+          <Card.Body id="about-body">
+            <p>Hey! My name is Kaleigh and I love llamas, animals, nature, and color. I was trained in fine arts at FIT before I left for the desert and farm life in S Utah - where I met my best friend Mac, a McNab Border Collie Aussie who shows up in a lot of my work. That chapter led me to Bend, OR, where I've been studying and practicing veterinary medicine.</p>
 
-            <p>My two passions were intertwined when I started Paint Your Pup, a series of pieces featuring my client's/friends dogs. If you have a pup you'd like painted you can request one <Link to="/contact">here</Link> </p>
+            <p>My art is inspired by the world around me and the journey that brought me here. My goal is to share it with you!</p>
+
+            <p>Catch me at local art markets - find the dates on my <a href="https://www.instagram.com/kaleigh.llama/" >Instagram</a> - and browse the latest stickers and limited edition prints <a href="https://printify.com/app/account/my-stores">Here</a> </p>
           </Card.Body>
         </Card> 
       </Col>

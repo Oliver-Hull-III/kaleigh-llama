@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import { Form, Button, Row, Col, FormGroup } from 'react-bootstrap';
-import * as emailjs from 'emailjs-com'
 
+const EMAILJS_ENDPOINT = 'https://api.emailjs.com/api/v1.0/email/send'
+const EMAILJS_SERVICE_ID = 'service_jkx0s4s'
+const EMAILJS_TEMPLATE_ID = 'template_pkunsbo'
+const EMAILJS_PUBLIC_KEY = 'mqoDugN3shcQ_HH36'
 
 class Contact extends Component {
     state = {
@@ -10,7 +13,8 @@ class Contact extends Component {
         contactReason: '',
         message: '',
         backgroundImage: this.getBackgroundImage(null),
-        placeholder: 'Enter message here'
+        placeholder: 'Enter message here',
+        status: null
     }
     handleSubmit(e) {
         e.preventDefault()
@@ -22,14 +26,28 @@ class Contact extends Component {
         contact_reason: contactReason,
         message: message,
         }
-        emailjs.send(
-        'service_tbpoeii',
-        'template_ukewuic',
-        templateParams,
-        'user_HahYBNSEmepo8ZNhn74Vf'
-        )
-        this.resetForm()
-
+        this.setState({ status: 'sending' })
+        fetch(EMAILJS_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                service_id: EMAILJS_SERVICE_ID,
+                template_id: EMAILJS_TEMPLATE_ID,
+                user_id: EMAILJS_PUBLIC_KEY,
+                template_params: templateParams,
+            }),
+        }).then((response) => {
+            if (!response.ok) {
+                return response.text().then((text) => {
+                    throw new Error(text || `HTTP ${response.status}`)
+                })
+            }
+            this.resetForm()
+            this.setState({ status: 'success' })
+        }).catch((err) => {
+            console.error('EmailJS send failed:', err)
+            this.setState({ status: 'error' })
+        })
     }
     resetForm() {
         this.setState({
@@ -53,8 +71,6 @@ class Contact extends Component {
         switch(value){
             case 'Paint Ur Pup':
                 return 'https://u.cubeupload.com/kaleighllama/pypbg.jpg';
-            case 'Animal Care Inquiry':
-                return 'https://u.cubeupload.com/kaleighllama/animalcarebg.jpg';
             case 'Request Painting':
                 return 'https://u.cubeupload.com/kaleighllama/requestpaintingbg.jpg';
             default: 
@@ -63,10 +79,8 @@ class Contact extends Component {
     }
     getPlaceholder(value){
         switch(value){
-            case 'Animal Care Inquiry':
-                return 'Please include type/number of animals, your location, and dates you need care';
             case 'Paint Ur Pup':
-            case 'Request Painting':
+            case 'Custom Painting':
                 return 'Include a link to the image you want painted if possible';
             default: 
                 return 'Enter message here';
@@ -113,9 +127,9 @@ class Contact extends Component {
                                     onChange={this.setBackground.bind(this, 'contactReason')}
                                 >
                                     <option>Reason For Contacting</option>
-                                    <option>Request Painting</option>
-                                    <option>Animal Care Inquiry</option>
+                                    <option>Custom Painting</option>
                                     <option>Paint Ur Pup</option>
+                                    <option>Other</option>
                                 </Form.Control>
                             </FormGroup>
                             <FormGroup>
@@ -129,9 +143,13 @@ class Contact extends Component {
                                 />
                             </FormGroup>
                             <FormGroup>
-                                <Button variant="primary" type="submit" id="send-email-button"> 
-                                    Submit
+                                <Button variant="primary" type="submit" id="send-email-button" disabled={this.state.status === 'sending'}>
+                                    {this.state.status === 'sending' ? 'Sending...' : 'Submit'}
                                 </Button>
+                                {this.state.status === 'success' &&
+                                    <div className="mt-2 text-success">Message sent — thank you!</div>}
+                                {this.state.status === 'error' &&
+                                    <div className="mt-2 text-danger">Sorry, something went wrong. Please try again or email directly.</div>}
                             </FormGroup>
                         </Col>
 
@@ -140,6 +158,6 @@ class Contact extends Component {
 
         );
     };
-};
+}
   
 export default Contact;

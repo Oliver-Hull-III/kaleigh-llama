@@ -21,13 +21,13 @@ const Navigation = () => (
             <HashLink to="/#art" className="nav-link">Art</HashLink>
         </Nav.Item>
         <Nav.Item>
-            <HashLink to="/#animalcare" className="nav-link">Animal Care</HashLink>
-        </Nav.Item>
-        <Nav.Item>
             <Link to="/about" className="nav-link">About Me</Link>
         </Nav.Item>   
         <Nav.Item>
             <Link to="/contact" className="nav-link">Contact</Link>
+        </Nav.Item>
+        <Nav.Item>
+            <a href="https://www.instagram.com/kaleigh.llama/" className="nav-link">Shop</a>
         </Nav.Item>
     </Nav>
     <Nav>

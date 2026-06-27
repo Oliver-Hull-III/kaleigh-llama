@@ -8,7 +8,6 @@ import About from "./About";
 import Navbar from './Components/Navbar';
 import Art from "./Art";
 import Contact from './Contact';
-import AnimalCare from './AnimalCare';
 import Footer from './Components/Footer';
 
 
@@ -21,7 +20,7 @@ export function cacheImage(src) {
     img.onerror = () => Promise.reject("couldn't load image:" + src);
     img.src = src;
   })
-};
+}
 
 function App(){
 
@@ -37,7 +36,6 @@ function App(){
       'https://u.cubeupload.com/kaleighllama/requestpaintingbg.jpg', //request-painting-bg.png
       'https://u.cubeupload.com/kaleighllama/kaleighllama.png', //kaleigh-llama.png
       'https://u.cubeupload.com/kaleighllama/portrait.png',  //portrait.png
-      'https://u.cubeupload.com/kaleighllama/animalcarebg.jpg',   //animal-care.png
     ];
 
     cacheImages(imgs);
@@ -76,7 +74,6 @@ function App(){
       <Route path="/about" component={About} />
       <Route path="/art" component={Art} />
       <Route path="/contact" component={Contact} />
-      <Route path="/animal-care" component={AnimalCare} />
       <Footer/>
     </div>
   );
