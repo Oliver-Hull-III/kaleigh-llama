@@ -16,7 +16,7 @@ const About = () => (
 
             <p>My art is inspired by the world around me and the journey that brought me here. My goal is to share it with you!</p>
 
-            <p>Catch me at local art markets - find the dates on my <a href="https://www.instagram.com/kaleigh.llama/" >Instagram</a> - and check out my prints <a href="www.etsy.com/shop/KaleighLlama?ref=shop_profile&listing_id=4502786144">Here</a> </p>
+            <p>Catch me at local art markets - find the dates on my <a href="https://www.instagram.com/kaleigh.llama/" >Instagram</a> - and check out my prints <a href="https://www.etsy.com/shop/KaleighLlama?ref=shop_profile&listing_id=4502786144">Here</a> </p>
           </Card.Body>
         </Card> 
       </Col>
