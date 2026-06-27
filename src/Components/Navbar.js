@@ -27,7 +27,7 @@ const Navigation = () => (
             <Link to="/contact" className="nav-link">Contact</Link>
         </Nav.Item>
         <Nav.Item>
-            <a href="https://www.instagram.com/kaleigh.llama/" className="nav-link">Shop</a>
+            <a href="www.etsy.com/shop/KaleighLlama?ref=shop_profile&listing_id=4502786144" className="nav-link">Shop</a>
         </Nav.Item>
     </Nav>
     <Nav>
