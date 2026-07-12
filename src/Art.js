@@ -3,81 +3,82 @@ import { Col, Card, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { ColumnsPhotoAlbum } from 'react-photo-album';
 import 'react-photo-album/columns.css';
+import {netlifyImageUrl} from "./utils/netlifyImage";
 
 
 const paintYourPup = [
     {
-      src: 'images/paintyourpup/pyp_1x1_1.jpg',
+      src: netlifyImageUrl('images/paintyourpup/pyp_1x1_1.jpg', { w: 800 }),
       width: 3,
       height: 3
     },
     {
-      src: 'images/paintyourpup/pyp_4x3_3.jpg',
+      src: netlifyImageUrl('images/paintyourpup/pyp_4x3_3.jpg', { w: 800 }),
       width: 3,
       height: 4
     },
     {
-      src: 'images/paintyourpup/pyp_7x5_3.jpg',
+      src: netlifyImageUrl('images/paintyourpup/pyp_7x5_3.jpg', { w: 800 }),
       width: 5,
       height: 7
     },
     {
-      src: 'images/paintyourpup/pyp_4x3_4.jpg',
+      src: netlifyImageUrl('images/paintyourpup/pyp_4x3_4.jpg', { w: 800 }),
       width: 3,
       height: 4
     },
     {
-      src: 'images/paintyourpup/pyp_10x8_4.jpg',
+      src: netlifyImageUrl('images/paintyourpup/pyp_10x8_4.jpg', { w: 800 }),
       width: 8,
       height: 10
     },
     {
-      src: 'images/paintyourpup/pyp_3x2_1.jpg',
+      src: netlifyImageUrl('images/paintyourpup/pyp_3x2_1.jpg', { w: 800 }),
       width: 3,
       height: 2
     },
     {
-      src: 'images/paintyourpup/pyp_10x8_3.jpg',
+      src: netlifyImageUrl('images/paintyourpup/pyp_10x8_3.jpg', { w: 800 }),
       width: 8,
       height: 10
     },
     {
-      src: 'images/paintyourpup/pyp_3x2_2.jpg',
+      src: netlifyImageUrl('images/paintyourpup/pyp_3x2_2.jpg', { w: 800 }),
       width: 2,
       height: 3
     },
     {
-      src: 'images/paintyourpup/pyp_7x5_2.jpg',
+      src: netlifyImageUrl('images/paintyourpup/pyp_7x5_2.jpg', { w: 800 }),
       width: 5,
       height: 7
     },
     {
-      src: 'images/paintyourpup/pyp_7x5_1.jpg',
+      src: netlifyImageUrl('images/paintyourpup/pyp_7x5_1.jpg', { w: 800 }),
       width: 7,
       height: 5
     },
     {
-      src: 'images/paintyourpup/pyp_10x8_1.jpg',
+      src: netlifyImageUrl('images/paintyourpup/pyp_10x8_1.jpg', { w: 800 }),
       width: 8,
       height: 10
     },
     {
-      src: 'images/paintyourpup/pyp_10x8_2.jpg',
+      src: netlifyImageUrl('images/paintyourpup/pyp_10x8_2.jpg', { w: 800 }),
       width: 8,
       height: 10
     },
     {
-      src: 'images/paintyourpup/pyp_3x2_3.jpg',
+      src: netlifyImageUrl('images/paintyourpup/pyp_3x2_3.jpg', { w: 800 }),
       width: 2,
       height: 3
     },
     {
-      src: 'images/paintyourpup/pyp_4x3_1.jpg',
+      src: netlifyImageUrl('images/paintyourpup/pyp_4x3_1.jpg', { w: 800 }),
       width: 3,
       height: 4
     },
     {
-      src: '/images/paintyourpup/pyp_4x3_2.jpg',
+      src: netlifyImageUrl('/images/paintyourpup/pyp_4x3_2.jpg', { w: 800 }),
       width: 3,
       height: 4
     }
