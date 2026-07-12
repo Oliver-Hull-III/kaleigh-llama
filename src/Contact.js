@@ -119,10 +119,9 @@ class Contact extends Component {
                                 </Row>
                             </FormGroup>
                             <FormGroup>
-                                <Form.Control 
-                                    as="select"
+                                <Form.Select
                                     name="contactReason"
-                                    className="text-primary"
+                                    className="text-primary mt-2"
                                     value={this.state.contactReason}
                                     onChange={this.setBackground.bind(this, 'contactReason')}
                                 >
@@ -130,10 +129,11 @@ class Contact extends Component {
                                     <option>Custom Painting</option>
                                     <option>Paint Ur Pup</option>
                                     <option>Other</option>
-                                </Form.Control>
+                                </Form.Select>
                             </FormGroup>
                             <FormGroup>
-                                <Form.Control 
+                                <Form.Control
+                                    className="mt-2"
                                     rows={6} 
                                     as="textarea" 
                                     placeholder={this.state.placeholder} 
@@ -142,12 +142,12 @@ class Contact extends Component {
                                     onChange={this.handleChange.bind(this, 'message')}
                                 />
                             </FormGroup>
-                            <FormGroup>
+                            <FormGroup className="mt-2">
                                 <Button variant="primary" type="submit" id="send-email-button" disabled={this.state.status === 'sending'}>
                                     {this.state.status === 'sending' ? 'Sending...' : 'Submit'}
                                 </Button>
                                 {this.state.status === 'success' &&
-                                    <div className="mt-2 text-success">Message sent — thank you!</div>}
+                                    <div className="mt-2 text-white">Message sent — thank you!</div>}
                                 {this.state.status === 'error' &&
                                     <div className="mt-2 text-danger">Sorry, something went wrong. Please try again or email directly.</div>}
                             </FormGroup>

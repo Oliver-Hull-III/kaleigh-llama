@@ -1,7 +1,8 @@
 import React from 'react'; 
 import { Col, Card, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Gallery from 'react-photo-gallery';
+import { ColumnsPhotoAlbum } from 'react-photo-album';
+import 'react-photo-album/columns.css';
 
 
 const paintYourPup = [
@@ -124,7 +125,7 @@ const Art = () => (
                 <p className="lead">This is a series of commissions I've been doing for owners of the animals I take care of, as well as my friends and family. You can request one <Link to="/contact">here</Link></p>
                 </Card.Header>
                 <Card.Body>
-                <Gallery photos={paintYourPup} direction={"column"}/>
+                <ColumnsPhotoAlbum photos={paintYourPup} columns={3} />
                 </Card.Body>
             </Card>
             </Col>
@@ -137,7 +138,7 @@ const Art = () => (
                 <p className="lead">For each of these works, I had a friend choose a song and I used it as inspiration.</p>
                 </Card.Header>
                 <Card.Body>
-                <Gallery photos={songsForFriends} direction={"column"}/>
+                <ColumnsPhotoAlbum photos={songsForFriends} columns={2} />
                 </Card.Body>
             </Card>
             </Col>

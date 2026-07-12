@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './css/App.css';
 import './css/utilities.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -70,10 +70,12 @@ function App(){
       : null}
 
       <Navbar/>
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/art" component={Art} />
-      <Route path="/contact" component={Contact} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/art" element={<Art />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
       <Footer/>
     </div>
   );
