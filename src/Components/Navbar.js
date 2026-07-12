@@ -4,14 +4,13 @@ import { HashLink } from 'react-router-hash-link';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { AiFillInstagram, AiFillFacebook, AiFillYoutube } from 'react-icons/ai';
-import Logo from '../images/alpaca-svgrepo-com.svg';
 
 const Navigation = () => (
 
     <Navbar collapseOnSelect expand="lg" className="primary-color p-3" variant='dark'>
     <Navbar.Brand>
         <Link to="/" className="nav-link">
-            <img src={Logo} width="70" height="70" alt="Kaleigh Llama"/>
+            <img src="/images/alpaca-svgrepo-com.svg" width="70" height="70" alt="Kaleigh Llama"/>
         </Link>
     </Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
