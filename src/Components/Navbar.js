@@ -8,15 +8,15 @@ import Logo from '../images/alpaca-svgrepo-com.svg';
 
 const Navigation = () => (
 
-    <Navbar collapseOnSelect expand="lg" className="primary-color" variant='dark'>
+    <Navbar collapseOnSelect expand="lg" className="primary-color p-3" variant='dark'>
     <Navbar.Brand>
         <Link to="/" className="nav-link">
-            <img src={Logo} width="50" height="50" alt="Kaleigh Llama"/>
+            <img src={Logo} width="70" height="70" alt="Kaleigh Llama"/>
         </Link>
     </Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="mr-auto">
+    <Nav className="me-auto">
         <Nav.Item>
             <HashLink to="/#art" className="nav-link">Art</HashLink>
         </Nav.Item>

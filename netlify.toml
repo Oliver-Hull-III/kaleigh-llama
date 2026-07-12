@@ -3,6 +3,6 @@
   publish = "build"
 
 [build.environment]
-  # react-scripts 3.4.3 (webpack 4) needs --openssl-legacy-provider, which only
-  # exists on Node 17+. Pin a modern Node so the flag in the build script is valid.
+  # react-scripts 5 (webpack 5) builds cleanly on modern Node without the old
+  # --openssl-legacy-provider workaround. Pin a current LTS for reproducible builds.
   NODE_VERSION = "20"
