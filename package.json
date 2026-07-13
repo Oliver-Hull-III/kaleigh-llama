@@ -19,9 +19,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "node scripts/fetch-content.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build --cname kaleighllama.com",
     "build": "react-scripts build",
+    "fetch-content": "node scripts/fetch-content.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

@@ -6,3 +6,6 @@
   # react-scripts 5 (webpack 5) builds cleanly on modern Node without the old
   # --openssl-legacy-provider workaround. Pin a current LTS for reproducible builds.
   NODE_VERSION = "20"
+  # Set STRAPI_URL to your Cloudflare Tunnel URL in the Netlify dashboard
+  # (Site Settings → Environment Variables). Example:
+  # STRAPI_URL = "https://cms.kaleighllama.com"
