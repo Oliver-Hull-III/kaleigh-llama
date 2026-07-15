@@ -51,6 +51,7 @@ const Art = () => {
                       }}
                     />
                     <Lightbox
+                      styles={{ container: { backgroundColor: "rgba(0, 0, 0, 0.8)" } }}
                       open={openGallery === gallery.slug}
                       close={() => setOpenGallery(null)}
                       index={index}
