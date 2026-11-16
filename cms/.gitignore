@@ -1,0 +1,43 @@
+############################
+# OS / Editor
+############################
+.DS_Store
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+############################
+# Node
+############################
+node_modules/
+npm-debug.log
+yarn-error.log
+.pnp
+.pnp.js
+
+############################
+# Strapi
+############################
+.env
+.env.*
+!.env.example
+dist/
+build/
+.cache/
+.tmp/
+.strapi/
+.strapi-updater.json
+types/generated/
+license.txt
+exports/
+*.db
+*.db-journal
+
+# Uploaded media lives on the Pi's filesystem and is pulled into the
+# frontend build by scripts/fetch-content.mjs — never commit it.
+public/uploads/*
+!public/uploads/.gitkeep
